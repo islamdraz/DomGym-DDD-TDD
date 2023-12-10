@@ -15,6 +15,8 @@ public class Session
     // private readonly Guid _roomid;
     private readonly int _maxParticipants;
 
+    public Guid Id { get { return this._id; } }
+
     public Session(DateOnly date,
         TimeOnly startTime,
         TimeOnly endTime,
@@ -32,13 +34,13 @@ public class Session
 
     public ErrorOr<Success> CancelReservation(Participant participant, IDateTimeProvider datetimeProvider)
     {
-        if(IsTooCloseToSession(datetimeProvider.UtcNow))
+        if (IsTooCloseToSession(datetimeProvider.UtcNow))
         {
 
             return SessionErrors.CannotCancelReservationTooCloseToSession;
         }
 
-        if(!_participantIds.Remove(participant.Id))
+        if (!_participantIds.Remove(participant.Id))
         {
             return SessionErrors.CannotCancelParticipantDoesnotExists;
         }
@@ -48,9 +50,9 @@ public class Session
 
     private bool IsTooCloseToSession(DateTime utcNow)
     {
-         const int minHours = 24;
+        const int minHours = 24;
 
-         return (this._date.ToDateTime(this._startTime) - utcNow).TotalHours < minHours;
+        return (this._date.ToDateTime(this._startTime) - utcNow).TotalHours < minHours;
 
     }
 
@@ -58,7 +60,7 @@ public class Session
     {
         if (_participantIds.Count() >= _maxParticipants)
         {
-           return SessionErrors.CannotReserveParticipantsThanSessionCapacity;
+            return SessionErrors.CannotReserveParticipantsThanSessionCapacity;
         }
         _participantIds.Add(participant.Id);
         return Result.Success;
