@@ -18,7 +18,7 @@ public class Gym
         this._id = id ?? Guid.NewGuid();
     }
 
-    public Guid? Id { get { return this._id; } }
+    public Guid Id { get { return this._id; } }
 
     public ErrorOr<Success> AddRoom(Room room)
     {

@@ -1,13 +1,14 @@
-using DomeGym.UnitTests.TestUtils.TestConstants;
+using DomeGym.UnitTests.TestConstants;
 
-namespace DomeGym.Domain.UnitTests;
-
-
-public static class RoomFactory
+namespace DomeGym.Domain.UnitTests
 {
 
-    public static Room CreateRoom(int? maxDailySession = null, Guid? gymId = null, Guid? roomId = null)
+    public static class RoomFactory
     {
-        return new Room(maxDailySession: maxDailySession ?? Constants.Room.MaxDailySession, gymId ?? Constants.Gym.Id, roomId ?? Constants.Room.Id);
+
+        public static Room CreateRoom(int? maxDailySession = null, Guid? gymId = null, Guid? roomId = null)
+        {
+            return new Room(maxDailySession: maxDailySession ?? Constants.Room.MaxDailySession, gymId ?? Constants.Gym.Id, roomId ?? Constants.Room.Id);
+        }
     }
 }

@@ -34,6 +34,7 @@
 ### Session
 
 ------------------------
+
 ## Invariants
 
 ## session invariants
@@ -52,7 +53,7 @@
 
 ## Subscription invariants
 
-1. A subscription cannot have more than the subscription allows
+1. A subscription cannot have more gyms than the subscription allows
 
 ## Trainer Invariants
 

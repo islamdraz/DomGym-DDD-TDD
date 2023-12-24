@@ -1,16 +1,17 @@
 using DomeGym.Domain;
 
-namespace DomeGym.UnitTests.TestUtils.Services;
-
-
-public class TestDateTimeProvider : IDateTimeProvider
+namespace DomeGym.UnitTests.TestUtils.Services
 {
-    private readonly DateTime? _fixedDateTime;
 
-    public TestDateTimeProvider(DateTime? fixedDateTime = null)
+    public class TestDateTimeProvider : IDateTimeProvider
     {
-        this._fixedDateTime = fixedDateTime;
-    }
-    public DateTime UtcNow => _fixedDateTime ?? DateTime.UtcNow;
-}
+        private readonly DateTime? _fixedDateTime;
 
+        public TestDateTimeProvider(DateTime? fixedDateTime = null)
+        {
+            this._fixedDateTime = fixedDateTime;
+        }
+        public DateTime UtcNow => _fixedDateTime ?? DateTime.UtcNow;
+    }
+
+}

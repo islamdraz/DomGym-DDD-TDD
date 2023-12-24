@@ -1,12 +1,13 @@
 using DomeGym.Domain;
-using DomeGym.UnitTests.TestUtils.TestConstants;
+using DomeGym.UnitTests.TestConstants;
 
-namespace DomeGym.UnitTests.Gyms;
-
-public static class GymFactory
+namespace DomeGym.UnitTests.Gyms
 {
-    public static Gym CreateGym( int maxRooms, Guid? id = null)
+    public static class GymFactory
     {
-        return new Gym(maxRooms, id ?? Constants.Gym.Id);
+        public static Gym CreateGym(int maxRooms, Guid? id = null)
+        {
+            return new Gym(maxRooms, id ?? Constants.Gym.Id);
+        }
     }
 }

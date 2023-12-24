@@ -1,24 +1,23 @@
 using DomeGym.Domain;
-using DomeGym.UnitTests.TestUtils.TestConstants;
+using DomeGym.UnitTests.TestConstants;
 
-namespace DomeGym.UnitTests.TestUtils.Sessions;
-
-public static class SessionFactory
+namespace DomeGym.UnitTests.TestUtils.Sessions
 {
-    public static Session CreateSession(
-        DateOnly? date = null,
-        TimeOnly? startTime = null,
-        TimeOnly? endTime = null,
-        int maxPraticipants = Constants.Session.MaxParticipants,
-        Guid? id = null)
+    public static class SessionFactory
     {
-        return new Session(
-                            date ?? Constants.Session.Date,
-                            startTime ?? Constants.Session.StartTime,
-                            endTime ?? Constants.Session.EndTime,
-                             maxPraticipants,
-                            trainerId: Constants.Trainer.Id,
-                            id:id ?? Constants.Session.Id
-                             );
+        public static Session CreateSession(
+            DateOnly? date = null,
+            TimeRange? time = null,
+            int maxPraticipants = Constants.Session.MaxParticipants,
+            Guid? id = null)
+        {
+            return new Session(
+                                date: date ?? Constants.Session.Date,
+                                time: time ?? Constants.Session.Time,
+                                maxParticipants: maxPraticipants,
+                                trainerId: Constants.Trainer.Id,
+                                id: id ?? Constants.Session.Id
+                                 );
+        }
     }
 }
