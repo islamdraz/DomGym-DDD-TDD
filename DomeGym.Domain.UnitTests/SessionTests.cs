@@ -2,7 +2,6 @@ using DomeGym.Domain;
 using DomeGym.Domain.UnitTests.TestUtils.Participants;
 using DomeGym.UnitTests.TestUtils.Services;
 using DomeGym.UnitTests.TestUtils.Sessions;
-using DomeGym.UnitTests.TestConstants;
 using FluentAssertions;
 
 namespace DomeGym.UnitTests

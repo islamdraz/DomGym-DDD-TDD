@@ -1,7 +1,7 @@
 using System.Reflection.Metadata;
 using DomeGym.Domain;
 
-namespace DomeGym.UnitTests.TestConstants
+namespace DomeGym.Domain.UnitTests.TestConstants
 {
     public static partial class Constants
     {

@@ -1,4 +1,3 @@
-using DomeGym.UnitTests.TestConstants;
 
 namespace DomeGym.Domain.UnitTests;
 

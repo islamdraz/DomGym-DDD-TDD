@@ -1,5 +1,4 @@
 using DomeGym.Domain;
-using DomeGym.UnitTests.TestConstants;
 
 namespace DomeGym.Domain.UnitTests.TestUtils.Participants
 {
