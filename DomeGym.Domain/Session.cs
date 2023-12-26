@@ -8,23 +8,22 @@ public class Session
     private readonly Guid _id;
     private readonly Guid _trainerId;
     private readonly List<Guid> _participantIds = new();
-    private readonly DateOnly _date;
-    private readonly TimeOnly _startTime;
-    private readonly TimeOnly _endTime;
+    public DateOnly Date { get; }
+    public TimeRange Time { get; }
 
     // private readonly Guid _roomid;
     private readonly int _maxParticipants;
 
+    public Guid Id { get { return this._id; } }
+
     public Session(DateOnly date,
-        TimeOnly startTime,
-        TimeOnly endTime,
+        TimeRange time,
         int maxParticipants,
         Guid trainerId,
         Guid? id = null)
     {
-        this._date = date;
-        this._startTime = startTime;
-        this._endTime = endTime;
+        this.Date = date;
+        Time = time;
         _maxParticipants = maxParticipants;
         _trainerId = trainerId;
         _id = id ?? Guid.NewGuid();
@@ -32,13 +31,13 @@ public class Session
 
     public ErrorOr<Success> CancelReservation(Participant participant, IDateTimeProvider datetimeProvider)
     {
-        if(IsTooCloseToSession(datetimeProvider.UtcNow))
+        if (IsTooCloseToSession(datetimeProvider.UtcNow))
         {
 
             return SessionErrors.CannotCancelReservationTooCloseToSession;
         }
 
-        if(!_participantIds.Remove(participant.Id))
+        if (!_participantIds.Remove(participant.Id))
         {
             return SessionErrors.CannotCancelParticipantDoesnotExists;
         }
@@ -48,9 +47,9 @@ public class Session
 
     private bool IsTooCloseToSession(DateTime utcNow)
     {
-         const int minHours = 24;
+        const int minHours = 24;
 
-         return (this._date.ToDateTime(this._startTime) - utcNow).TotalHours < minHours;
+        return (this.Date.ToDateTime(this.Time.Start) - utcNow).TotalHours < minHours;
 
     }
 
@@ -58,7 +57,7 @@ public class Session
     {
         if (_participantIds.Count() >= _maxParticipants)
         {
-           return SessionErrors.CannotReserveParticipantsThanSessionCapacity;
+            return SessionErrors.CannotReserveParticipantsThanSessionCapacity;
         }
         _participantIds.Add(participant.Id);
         return Result.Success;
