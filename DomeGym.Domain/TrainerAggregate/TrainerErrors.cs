@@ -1,6 +1,6 @@
 using ErrorOr;
 
-namespace DomeGym.Domain;
+namespace DomeGym.Domain.TrainerAggregate;
 
 public static class TrainerError
 {

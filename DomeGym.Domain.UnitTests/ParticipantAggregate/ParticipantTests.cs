@@ -1,9 +1,10 @@
+using DomeGym.Domain.ParticipantAggregate;
 using DomeGym.Domain.UnitTests.TestUtils;
 using DomeGym.Domain.UnitTests.TestUtils.Participants;
 using DomeGym.UnitTests.TestUtils.Sessions;
 using FluentAssertions;
 
-namespace DomeGym.Domain.UnitTests;
+namespace DomeGym.Domain.UnitTests.ParticipantAggregate;
 
 public class ParticipantTests
 {

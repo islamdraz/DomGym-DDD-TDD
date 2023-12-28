@@ -1,4 +1,6 @@
 
+using DomeGym.Domain.RoomAggregate;
+
 namespace DomeGym.Domain.UnitTests
 {
 

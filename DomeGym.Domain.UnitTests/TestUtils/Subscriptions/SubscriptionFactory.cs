@@ -1,4 +1,6 @@
 
+using DomeGym.Domain.SubscriptionAggregate;
+
 namespace DomeGym.Domain.UnitTests;
 
 public static class SubscriptionFactory

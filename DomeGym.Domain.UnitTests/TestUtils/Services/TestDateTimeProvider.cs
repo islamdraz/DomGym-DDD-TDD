@@ -1,4 +1,4 @@
-using DomeGym.Domain;
+using DomeGym.Domain.Common.Interfaces;
 
 namespace DomeGym.UnitTests.TestUtils.Services
 {

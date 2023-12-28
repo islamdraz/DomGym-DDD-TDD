@@ -1,3 +1,5 @@
+using DomeGym.Domain.Common.ValueObjects;
+
 namespace DomeGym.Domain.UnitTests.TestUtils;
 
 public static class TimeRangeFactory

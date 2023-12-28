@@ -1,10 +1,11 @@
+using DomeGym.Domain.TrainerAggregate;
 using DomeGym.Domain.UnitTests.TestUtils;
 using DomeGym.UnitTests.TestUtils.Sessions;
 using DomeGym.UnitTests.TestUtils.Trainers;
 using FluentAssertions;
 
 
-namespace DomeGym.Domain.UnitTests;
+namespace DomeGym.Domain.UnitTests.TrainerAggregate;
 
 public class TainerTests
 {

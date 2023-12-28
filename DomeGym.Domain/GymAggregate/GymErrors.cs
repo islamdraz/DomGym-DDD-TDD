@@ -1,6 +1,6 @@
 using ErrorOr;
 
-namespace DomeGym.Domain;
+namespace DomeGym.Domain.GymAggregate;
 
 public static class GymErrors
 {

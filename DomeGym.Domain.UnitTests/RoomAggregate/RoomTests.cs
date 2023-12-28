@@ -1,9 +1,10 @@
 using System.Reflection.Metadata;
+using DomeGym.Domain.RoomAggregate;
 using DomeGym.Domain.UnitTests.TestUtils;
 using DomeGym.UnitTests.TestUtils.Sessions;
 using FluentAssertions;
 
-namespace DomeGym.Domain.UnitTests
+namespace DomeGym.Domain.UnitTests.RoomAggregate
 {
 
 

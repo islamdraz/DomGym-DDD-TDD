@@ -1,7 +1,8 @@
+using DomeGym.Domain.SubscriptionAggregate;
 using DomeGym.UnitTests.Gyms;
 using FluentAssertions;
 
-namespace DomeGym.Domain.UnitTests
+namespace DomeGym.Domain.UnitTests.SubscriptionAggregate
 {
 
     public class SubscriptionTest

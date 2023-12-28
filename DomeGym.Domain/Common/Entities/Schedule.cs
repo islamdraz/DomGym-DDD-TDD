@@ -1,3 +1,4 @@
+using DomeGym.Domain.Common.ValueObjects;
 using ErrorOr;
 
 namespace DomeGym.Domain;

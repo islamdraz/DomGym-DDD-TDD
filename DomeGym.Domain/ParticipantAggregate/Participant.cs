@@ -1,28 +1,19 @@
+using DomeGym.Domain.Common;
+using DomeGym.Domain.SessionAggregate;
 using ErrorOr;
 
-namespace DomeGym.Domain;
+namespace DomeGym.Domain.ParticipantAggregate;
 
-public class Participant
+public class Participant : AggregateRoot
 {
-    private readonly Guid _id;
     private readonly Guid _userId;
     private readonly List<Guid> _sessionIds = new List<Guid>();
 
     private Schedule _schedule = Schedule.Empty();
-    public Participant(Guid userId, Schedule? schedule = null, Guid? id = null)
+    public Participant(Guid userId, Schedule? schedule = null, Guid? id = null) : base(id: id ?? Guid.NewGuid())
     {
         _userId = userId;
-        this._id = id ?? Guid.NewGuid();
         _schedule = schedule ?? Schedule.Empty();
-    }
-
-    public Guid Id
-    {
-        get
-        {
-            return this._id;
-
-        }
     }
 
 

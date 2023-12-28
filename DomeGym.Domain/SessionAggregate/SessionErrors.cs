@@ -1,6 +1,6 @@
 using ErrorOr;
 
-namespace DomeGym.Domain;
+namespace DomeGym.Domain.SessionAggregate;
 
 public static class SessionErrors
 {
@@ -10,7 +10,7 @@ public static class SessionErrors
     public static Error CannotCancelParticipantDoesnotExists = Error.Validation(
         code: "Session.CannotCancelParticipantDoesnotExists",
         description: "Cannot Cancel Participant Doesn't exists in the session attendies");
-        
+
     public static Error CannotReserveParticipantsThanSessionCapacity = Error.Validation(
         code: "Session.CannotReserveParticipantsThanSessionCapacity",
         description: "Cannot Reserve Participants than session capacity");

@@ -1,9 +1,11 @@
 using System.Globalization;
+using DomeGym.Domain.Common;
+using DomeGym.Domain.SessionAggregate;
 using ErrorOr;
 
-namespace DomeGym.Domain;
+namespace DomeGym.Domain.RoomAggregate;
 
-public class Room
+public class Room : AggregateRoot
 {
     private readonly Guid _id;
     private readonly Guid _gymId;
@@ -11,23 +13,15 @@ public class Room
     private readonly List<Guid> _sessionIds = new();
 
     private readonly Schedule _schedule = Schedule.Empty();
-    public Room(int maxDailySession, Guid gymId, Guid? id = null)
+    public Room(int maxDailySession, Guid gymId, Guid? id = null) : base(id ?? Guid.NewGuid())
     {
-        this._maxDailySession = maxDailySession;
-        gymId = gymId;
-        this._id = id ?? Guid.NewGuid();
-    }
-    public Guid Id
-    {
-        get
-        {
-            return this._id;
-        }
+        _maxDailySession = maxDailySession;
+        _gymId = gymId;
     }
 
     public ErrorOr<Success> ScheduleSession(Session session)
     {
-        if (_sessionIds.Count >= this._maxDailySession)
+        if (_sessionIds.Count >= _maxDailySession)
         {
             return RoomErrors.CannotReserveSessionsThanSubscriptionAllows;
         }

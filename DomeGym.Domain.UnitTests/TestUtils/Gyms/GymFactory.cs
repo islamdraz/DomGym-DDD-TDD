@@ -1,4 +1,4 @@
-using DomeGym.Domain;
+using DomeGym.Domain.GymAggregate;
 
 namespace DomeGym.UnitTests.Gyms
 {

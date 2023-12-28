@@ -1,4 +1,4 @@
-using DomeGym.Domain;
+using DomeGym.Domain.ParticipantAggregate;
 
 namespace DomeGym.Domain.UnitTests.TestUtils.Participants
 {

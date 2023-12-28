@@ -1,5 +1,5 @@
 using System.Reflection.Metadata;
-using DomeGym.Domain;
+using DomeGym.Domain.Common.ValueObjects;
 
 namespace DomeGym.Domain.UnitTests.TestConstants
 {

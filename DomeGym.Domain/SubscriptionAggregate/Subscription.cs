@@ -1,19 +1,19 @@
 using System.Linq;
+using DomeGym.Domain.Common;
+using DomeGym.Domain.GymAggregate;
 using ErrorOr;
 
-namespace DomeGym.Domain;
+namespace DomeGym.Domain.SubscriptionAggregate;
 
-public class Subscription
+public class Subscription : AggregateRoot
 {
-    private readonly Guid _id;
     private readonly Guid _userId;
     private readonly List<Guid> _gymIds = new();
-    public Guid Id { get { return this._id; } }
     private readonly int _maxGymAllowed;
-    public Subscription(int maxGymAllowed, Guid? id)
+    public Subscription(int maxGymAllowed, Guid userId, Guid? id = null) : base(id ?? Guid.NewGuid())
     {
         _maxGymAllowed = maxGymAllowed;
-        this._id = id ?? Guid.NewGuid();
+        _userId = userId;
     }
 
     public ErrorOr<Success> AddGym(Gym gym)
