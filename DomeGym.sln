@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomeGym.Domain", "DomeGym.Domain\DomeGym.Domain.csproj", "{F8893676-7D3D-49F1-8A36-FD8E1E1916FD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomeGym.Domain", "src\DomeGym.Domain\DomeGym.Domain.csproj", "{F8893676-7D3D-49F1-8A36-FD8E1E1916FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomeGym.Domain.UnitTests", "DomeGym.Domain.UnitTests\DomeGym.Domain.UnitTests.csproj", "{839E372E-88FE-4D31-920D-64C484B217FB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomeGym.Domain.UnitTests", "tests\DomeGym.Domain.UnitTests\DomeGym.Domain.UnitTests.csproj", "{839E372E-88FE-4D31-920D-64C484B217FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
