@@ -5,8 +5,9 @@ namespace DomeGym.Domain.UnitTests;
 
 public static class SubscriptionFactory
 {
-    public static Subscription CreateSubscription(int maxGymAllowed, Guid? id = null)
+    public static Subscription CreateSubscription(SubscriptionType? subscriptionType = null, Guid? adminId = null, Guid? id = null)
     {
-        return new Subscription(maxGymAllowed: maxGymAllowed, id ?? Constants.Subscription.Id);
+        return new Subscription(subscriptionType: subscriptionType ?? Constants.Subscription.SubscriptionType, adminId: adminId ?? Constants.Admin.Id, id
+                                                                                                                                                       ?? Constants.Subscription.Id);
     }
 }

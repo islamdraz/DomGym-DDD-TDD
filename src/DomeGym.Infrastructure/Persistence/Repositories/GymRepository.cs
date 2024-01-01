@@ -1,0 +1,44 @@
+// using DomeGym.Application.Common.Interfaces;
+// using DomeGym.Domain.GymAggregate;
+// using DomeGym.Infrastructure.Persistance;
+// using Microsoft.EntityFrameworkCore;
+
+
+// namespace DomeGym.Infrastructure.Persistence.Repositories;
+
+// public class GymRepository : IGymRepository
+// {
+//     private readonly DomeGymDbContext _dbcontext;
+
+//     public GymRepository(DomeGymDbContext context)
+//     {
+//         _dbcontext = context;
+//     }
+//     public async Task AddGymAsync(Gym gym)
+//     {
+
+//         await _dbcontext.Gyms.AddAsync(gym);
+//     }
+//     public async Task<Gym?> GetByIdAsync(Guid id)
+//     {
+//         return await _dbcontext.Gyms.FindAsync(id);
+//     }
+//     public async Task<List<Gym>> ListSubscriptionGymsAsync(Guid subscriptionId)
+//     {
+//         return await _dbcontext.Gyms.Where(x => x.SubscriptionId == subscriptionId).ToListAsync();
+
+//     }
+//     public async Task RemoveAsync(Guid id)
+//     {
+//         var gym = await GetByIdAsync(id);
+//         _dbcontext.Remove(gym);
+//         await _dbcontext.SaveChangesAsync();
+//     }
+//     public async Task UpdateAsync(Gym gym)
+//     {
+//         _dbcontext.Update(gym);
+//         await _dbcontext.SaveChangesAsync();
+//     }
+
+// }
+

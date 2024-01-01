@@ -1,4 +1,3 @@
-using System.Runtime.InteropServices;
 using DomeGym.Domain.Common;
 using DomeGym.Domain.Common.Interfaces;
 using DomeGym.Domain.Common.ValueObjects;
@@ -9,10 +8,15 @@ namespace DomeGym.Domain.SessionAggregate;
 
 public class Session : AggregateRoot
 {
-    private readonly Guid _trainerId;
-    private readonly List<Reservation> _reservations = new();
+    private List<Reservation> _reservations { get; } = new();
     public DateOnly Date { get; }
     public TimeRange Time { get; }
+    public string Name { get; } = null!;
+    public string Description { get; } = null!;
+    public int MaxParticipants { get; }
+
+    public Guid RoomId { get; }
+    public Guid TrainerId { get; }
 
     // private readonly Guid _roomid;
     private readonly int _maxParticipants;
@@ -26,7 +30,7 @@ public class Session : AggregateRoot
         Date = date;
         Time = time;
         _maxParticipants = maxParticipants;
-        _trainerId = trainerId;
+        TrainerId = trainerId;
     }
 
     public ErrorOr<Success> CancelReservation(Participant participant, IDateTimeProvider datetimeProvider)
@@ -69,4 +73,6 @@ public class Session : AggregateRoot
         _reservations.Add(reservation);
         return Result.Success;
     }
+
+    private Session() { }
 }

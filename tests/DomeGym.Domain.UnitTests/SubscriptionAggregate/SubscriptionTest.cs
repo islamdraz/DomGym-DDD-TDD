@@ -11,9 +11,9 @@ namespace DomeGym.Domain.UnitTests.SubscriptionAggregate
         public void AddGym_WhenMoreThanSubscriptionAllows_ShouldFail()
         {
             // Given or Arrang
-            var subscription = SubscriptionFactory.CreateSubscription(1);
-            var gym1 = GymFactory.CreateGym(1, Guid.NewGuid());
-            var gym2 = GymFactory.CreateGym(1, Guid.NewGuid());
+            var subscription = SubscriptionFactory.CreateSubscription();
+            var gym1 = GymFactory.CreateGym(maxRooms: 1, id: Guid.NewGuid());
+            var gym2 = GymFactory.CreateGym(maxRooms: 1, id: Guid.NewGuid());
             // When or Act 
 
             var addGymToSubscriptionResult1 = subscription.AddGym(gym1);

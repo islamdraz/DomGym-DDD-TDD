@@ -6,13 +6,15 @@ namespace DomeGym.Domain.ParticipantAggregate;
 
 public class Participant : AggregateRoot
 {
-    private readonly Guid _userId;
-    private readonly List<Guid> _sessionIds = new List<Guid>();
-
-    private Schedule _schedule = Schedule.Empty();
-    public Participant(Guid userId, Schedule? schedule = null, Guid? id = null) : base(id: id ?? Guid.NewGuid())
+    private readonly Schedule _schedule = Schedule.Empty();
+    private readonly List<Guid> _sessionIds = new();
+    public Guid UserId { get; }
+    public IReadOnlyList<Guid> SessionIds => _sessionIds;
+    public Participant(Guid userId,
+                       Schedule? schedule = null,
+                       Guid? id = null) : base(id: id ?? Guid.NewGuid())
     {
-        _userId = userId;
+        UserId = userId;
         _schedule = schedule ?? Schedule.Empty();
     }
 
@@ -29,4 +31,6 @@ public class Participant : AggregateRoot
         _sessionIds.Add(session.Id);
         return Result.Success;
     }
+
+    private Participant() { }
 }

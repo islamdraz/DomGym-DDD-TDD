@@ -6,25 +6,26 @@ namespace DomeGym.Domain.GymAggregate;
 
 public class Gym : AggregateRoot
 {
-    private readonly Guid _id;
-    private readonly Guid _subscriptionId;
-    private readonly List<Guid> _roomIds = new();
-    private string _name;
-    private int _maxRoom;
+    private List<Guid> _roomIds { get; } = new();
+    private List<Guid> _trainerIds { get; } = new();
+    private int _maxRooms { get; }
+    public string Name { get; } = null;
+    public Guid SubscriptionId { get; }
 
 
-    public Gym(int maxRooms,
+    public Gym(string name, int maxRooms,
                Guid subscriptionId,
                Guid? id = null) : base(id ?? Guid.NewGuid())
     {
-        _maxRoom = maxRooms;
-        _subscriptionId = subscriptionId;
+        Name = name;
+        _maxRooms = maxRooms;
+        SubscriptionId = subscriptionId;
 
     }
 
     public ErrorOr<Success> AddRoom(Room room)
     {
-        if (_roomIds.Count >= _maxRoom)
+        if (_roomIds.Count >= _maxRooms)
             return GymErrors.CannotHaveRoomMoreThanSubscription;
 
         if (_roomIds.Contains(room.Id))
@@ -34,4 +35,6 @@ public class Gym : AggregateRoot
 
         return Result.Success;
     }
+
+    private Gym() { }
 }

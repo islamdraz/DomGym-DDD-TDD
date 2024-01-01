@@ -11,4 +11,6 @@ public class Reservation : Entity
     }
 
     public Guid ParticipantId => _participantId;
+
+    private Reservation() { }
 }

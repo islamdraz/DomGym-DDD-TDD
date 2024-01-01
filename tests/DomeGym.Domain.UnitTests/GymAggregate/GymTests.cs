@@ -12,7 +12,7 @@ namespace DomeGym.Domain.UnitTests.GymAggregate
         {
             // Given
             // Create Gym
-            var gym = GymFactory.CreateGym(1);
+            var gym = GymFactory.CreateGym(maxRooms: 1);
             var room1 = RoomFactory.CreateRoom(maxDailySession: 1, gymId: gym.Id, roomId: Guid.NewGuid());
             var room2 = RoomFactory.CreateRoom(maxDailySession: 1, gymId: gym.Id, roomId: Guid.NewGuid());
             // When

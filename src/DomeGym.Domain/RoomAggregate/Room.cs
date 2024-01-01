@@ -7,21 +7,23 @@ namespace DomeGym.Domain.RoomAggregate;
 
 public class Room : AggregateRoot
 {
-    private readonly Guid _id;
-    private readonly Guid _gymId;
-    private readonly int _maxDailySession;
+    public Guid GymId { get; private set; }
+    private int _maxDailySessions { get; }
     private readonly List<Guid> _sessionIds = new();
 
     private readonly Schedule _schedule = Schedule.Empty();
-    public Room(int maxDailySession, Guid gymId, Guid? id = null) : base(id ?? Guid.NewGuid())
+
+    public string Name { get; }
+    public Room(string name, int maxDailySession, Guid gymId, Guid? id = null) : base(id ?? Guid.NewGuid())
     {
-        _maxDailySession = maxDailySession;
-        _gymId = gymId;
+        _maxDailySessions = maxDailySession;
+        GymId = gymId;
+        Name = name;
     }
 
     public ErrorOr<Success> ScheduleSession(Session session)
     {
-        if (_sessionIds.Count >= _maxDailySession)
+        if (_sessionIds.Count >= _maxDailySessions)
         {
             return RoomErrors.CannotReserveSessionsThanSubscriptionAllows;
         }
@@ -38,4 +40,6 @@ public class Room : AggregateRoot
 
         return Result.Success;
     }
+
+    private Room() { }
 }

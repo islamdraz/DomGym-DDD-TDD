@@ -14,7 +14,7 @@ namespace DomeGym.Domain.UnitTests.RoomAggregate
         public void ScheduleSession_MoreThanSubscriptionAllows_ShouldFail()
         {
             // Given
-            var room = RoomFactory.CreateRoom(1);
+            var room = RoomFactory.CreateRoom(maxDailySession: 1);
 
             var session1 = SessionFactory.CreateSession(id: Guid.NewGuid());
             var session2 = SessionFactory.CreateSession(id: Guid.NewGuid());

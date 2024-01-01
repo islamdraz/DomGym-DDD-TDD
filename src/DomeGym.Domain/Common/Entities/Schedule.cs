@@ -1,18 +1,19 @@
+using DomeGym.Domain.Common;
 using DomeGym.Domain.Common.ValueObjects;
 using ErrorOr;
 
 namespace DomeGym.Domain;
 
-public class Schedule
+public class Schedule : Entity
 {
-    private readonly Guid _id;
 
     private readonly Dictionary<DateOnly, List<TimeRange>> _calendar = new();
 
-    public Schedule(Dictionary<DateOnly, List<TimeRange>> calendar = null, Guid? id = null)
+    public Schedule(Dictionary<DateOnly, List<TimeRange>> calendar = null,
+                    Guid? id = null) : base(id ?? Guid.NewGuid())
     {
         _calendar = calendar ?? new();
-        _id = id ?? Guid.NewGuid();
+
     }
 
     internal bool CanBookTimeSlot(DateOnly date, TimeRange time)
@@ -60,5 +61,7 @@ public class Schedule
     {
         return new Schedule();
     }
+
+    private Schedule() { }
 
 }

@@ -22,5 +22,5 @@ public abstract class Entity
     {
         return this.Id.GetHashCode();
     }
-
+    protected Entity() { }
 }
