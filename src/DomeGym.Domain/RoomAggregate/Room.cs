@@ -41,5 +41,10 @@ public class Room : AggregateRoot
         return Result.Success;
     }
 
+    public bool HasSession(Guid sessionId)
+    {
+        return _sessionIds.Contains(sessionId);
+    }
+
     private Room() { }
 }

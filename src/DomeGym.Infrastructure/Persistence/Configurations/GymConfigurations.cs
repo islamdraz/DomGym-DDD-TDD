@@ -1,5 +1,3 @@
-using System.Security.Cryptography.X509Certificates;
-using DomeGym.Domain.AdminAggregate;
 using DomeGym.Domain.GymAggregate;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;

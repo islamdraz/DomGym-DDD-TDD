@@ -1,4 +1,4 @@
-using DomeGym.Domain.Profile;
+using DomeGym.Domain.Profiles;
 
 namespace DomeGym.Application.Profiles.Common;
 

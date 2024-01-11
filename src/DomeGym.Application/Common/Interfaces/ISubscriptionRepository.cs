@@ -9,5 +9,6 @@ public interface ISubscriptionRepository
     Task<List<Subscription>> ListBySubscriptionIdAsync(Guid subscriptionId);
     Task RemoveAsync(Guid id);
     Task UpdateAsync(Subscription subscription);
+    Task<List<Subscription>> ListAsync();
 
 }

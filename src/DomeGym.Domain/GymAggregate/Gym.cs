@@ -1,5 +1,6 @@
 ﻿using DomeGym.Domain.Common;
 using DomeGym.Domain.RoomAggregate;
+using DomeGym.Domain.TrainerAggregate;
 using ErrorOr;
 
 namespace DomeGym.Domain.GymAggregate;
@@ -23,6 +24,12 @@ public class Gym : AggregateRoot
 
     }
 
+
+    public bool HasRoom(Guid roomId)
+    {
+        return _roomIds.Contains(roomId);
+    }
+
     public ErrorOr<Success> AddRoom(Room room)
     {
         if (_roomIds.Count >= _maxRooms)
@@ -34,6 +41,33 @@ public class Gym : AggregateRoot
         _roomIds.Add(room.Id);
 
         return Result.Success;
+    }
+
+    public ErrorOr<Success> AddTrainer(Trainer trainer)
+    {
+
+        if (_trainerIds.Contains(trainer.Id))
+            return Error.Conflict(description: "Trainer already exists");
+
+        _trainerIds.Add(trainer.Id);
+
+        return Result.Success;
+    }
+
+    public ErrorOr<Success> RemoveRoom(Room room)
+    {
+        if (!_roomIds.Contains(room.Id))
+        {
+            return Error.NotFound("Room is not found");
+        }
+
+        _roomIds.Remove(room.Id);
+        return Result.Success;
+    }
+
+    public bool HasTrainer(Guid trainerId)
+    {
+        return _trainerIds.Contains(trainerId);
     }
 
     private Gym() { }

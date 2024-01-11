@@ -1,4 +1,5 @@
 using DomeGym.Domain.Common;
+using DomeGym.Domain.Common.ValueObjects;
 using DomeGym.Domain.SessionAggregate;
 using ErrorOr;
 
@@ -30,6 +31,16 @@ public class Participant : AggregateRoot
 
         _sessionIds.Add(session.Id);
         return Result.Success;
+    }
+
+    public bool HasReservationForSession(Guid id)
+    {
+        return _sessionIds.Contains(id);
+    }
+
+    public bool IsTimeSlotFree(DateOnly date, TimeRange time)
+    {
+        return _schedule.CanBookTimeSlot(date, time);
     }
 
     private Participant() { }

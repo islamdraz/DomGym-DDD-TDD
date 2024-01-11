@@ -2,7 +2,7 @@
 using DomeGym.Application.Common.Interfaces;
 using DomeGym.Application.Profiles.Common;
 using DomeGym.Domain.AdminAggregate;
-using DomeGym.Domain.Profile;
+using DomeGym.Domain.Profiles;
 using DomeGym.Infrastructure.Persistance;
 using Microsoft.EntityFrameworkCore;
 

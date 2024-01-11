@@ -9,6 +9,7 @@ namespace DomeGym.Domain.SessionAggregate;
 public class Session : AggregateRoot
 {
     private List<Reservation> _reservations { get; } = new();
+    private readonly List<SessionCategory> _categories = new();
     public DateOnly Date { get; }
     public TimeRange Time { get; }
     public string Name { get; } = null!;
@@ -18,19 +19,28 @@ public class Session : AggregateRoot
     public Guid RoomId { get; }
     public Guid TrainerId { get; }
 
+    public IReadOnlyList<SessionCategory> Categories => _categories;
+
     // private readonly Guid _roomid;
     private readonly int _maxParticipants;
 
-    public Session(DateOnly date,
+    public Session(
+        string name,
+        DateOnly date,
         TimeRange time,
         int maxParticipants,
+        Guid roomId,
         Guid trainerId,
+        List<SessionCategory> categories,
         Guid? id = null) : base(id ?? Guid.NewGuid())
     {
+        Name = name;
         Date = date;
         Time = time;
         _maxParticipants = maxParticipants;
+        RoomId = roomId;
         TrainerId = trainerId;
+        _categories = categories;
     }
 
     public ErrorOr<Success> CancelReservation(Participant participant, IDateTimeProvider datetimeProvider)
@@ -72,6 +82,11 @@ public class Session : AggregateRoot
         var reservation = new Reservation(participantId: participant.Id);
         _reservations.Add(reservation);
         return Result.Success;
+    }
+
+    public bool HasReservationForParticipant(Guid participantId)
+    {
+        return _reservations.Any(x => x.ParticipantId == participantId);
     }
 
     private Session() { }

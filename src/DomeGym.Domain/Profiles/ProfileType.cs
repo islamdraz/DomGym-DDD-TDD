@@ -1,6 +1,6 @@
 using Ardalis.SmartEnum;
 
-namespace DomeGym.Domain.Profile;
+namespace DomeGym.Domain.Profiles;
 
 public sealed class ProfileType : SmartEnum<ProfileType>
 {
