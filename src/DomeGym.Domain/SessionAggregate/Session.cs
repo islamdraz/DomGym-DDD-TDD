@@ -10,6 +10,8 @@ public class Session : AggregateRoot
 {
     private List<Reservation> _reservations { get; } = new();
     private readonly List<SessionCategory> _categories = new();
+
+    public int NumParticipants => _reservations.Count();
     public DateOnly Date { get; }
     public TimeRange Time { get; }
     public string Name { get; } = null!;

@@ -18,6 +18,7 @@
   <ItemGroup>
     <ProjectReference Include="..\DomeGym.Infrastructure\DomeGym.Infrastructure.csproj" />
     <ProjectReference Include="..\DomeGym.Application\DomeGym.Application.csproj" />
+    <ProjectReference Include="..\DomeGym.Contracts\DomeGym.Contracts.csproj" />
   </ItemGroup>
 
 </Project>
