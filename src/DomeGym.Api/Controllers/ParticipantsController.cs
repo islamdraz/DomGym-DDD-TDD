@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DomeGym.Api.Controllers;
 
-
 [Route("participants")]
 public class ParticipantsController : ApiController
 {
