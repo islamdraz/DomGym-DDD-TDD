@@ -1,5 +1,6 @@
 using System.Reflection.Metadata;
 using DomeGym.Domain.Common.ValueObjects;
+using DomeGym.Domain.SessionAggregate;
 
 namespace DomeGym.Domain.UnitTests.TestConstants
 {
@@ -14,6 +15,8 @@ namespace DomeGym.Domain.UnitTests.TestConstants
             public static readonly TimeRange Time = new(TimeOnly.MinValue.AddHours(8), TimeOnly.MinValue.AddHours(9));
             public const int MaxParticipants = 1;
 
+            public static string Name = "Test Session";
+            internal static List<SessionCategory>? Categories = new();
         }
     }
 }

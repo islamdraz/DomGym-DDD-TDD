@@ -1,10 +1,11 @@
 using DomeGym.Application.Common.Interfaces;
 using DomeGym.Domain.SubscriptionAggregate;
+using DomeGym.Infrastructure.Persistance;
 using Microsoft.EntityFrameworkCore;
 
 namespace DomeGym.Infrastructure.Persistence.Repositories;
 
-public class SubscriptionsRepository : ISubscriptionsRepository
+public class SubscriptionsRepository : ISubscriptionRepository
 {
     private readonly DomeGymDbContext _dbContext;
 
@@ -34,6 +35,13 @@ public class SubscriptionsRepository : ISubscriptionsRepository
     public async Task<List<Subscription>> ListAsync()
     {
         return await _dbContext.Subscriptions.ToListAsync();
+    }
+
+
+
+    public Task RemoveAsync(Guid id)
+    {
+        throw new NotImplementedException();
     }
 
     public async Task UpdateAsync(Subscription subscription)

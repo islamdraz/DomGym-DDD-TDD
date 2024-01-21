@@ -2,11 +2,12 @@ using DomeGym.Application.Common.Interfaces;
 using DomeGym.Application.Profiles.Common;
 using DomeGym.Domain.Profiles;
 using DomeGym.Domain.TrainerAggregate;
+using DomeGym.Infrastructure.Persistance;
 using Microsoft.EntityFrameworkCore;
 
 namespace DomeGym.Infrastructure.Persistence.Repositories;
 
-public class TrainersRepository : ITrainersRepository
+public class TrainersRepository : ITrainerRepository
 {
     private readonly DomeGymDbContext _dbContext;
 
