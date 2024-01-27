@@ -22,7 +22,7 @@ public class GymsController : ApiController
 
 
     [HttpPost]
-    public async Task<IActionResult> Post(CreateGymRequest gymRequest, Guid subscriptionId)
+    public async Task<IActionResult> Post(Guid subscriptionId, CreateGymRequest gymRequest)
     {
         var command = new CreateGymCommand(gymRequest.Name, SubscriptionId: subscriptionId);
         var result = await sender.Send(command);
