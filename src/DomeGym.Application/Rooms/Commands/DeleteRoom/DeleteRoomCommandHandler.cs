@@ -7,8 +7,8 @@ namespace DomeGym.Application.Rooms.Commands;
 public class DeleteRoomCommandHandler : IRequestHandler<DeleteRoomCommand, ErrorOr<Deleted>>
 {
     private readonly IRoomsRepository _roomsRepository;
-    private readonly IGymRepository _gymRepository;
-    public DeleteRoomCommandHandler(IRoomsRepository roomsRepository, IGymRepository gymRepository)
+    private readonly IGymsRepository _gymRepository;
+    public DeleteRoomCommandHandler(IRoomsRepository roomsRepository, IGymsRepository gymRepository)
     {
         _roomsRepository = roomsRepository;
         _gymRepository = gymRepository;

@@ -10,9 +10,9 @@ namespace DomeGym.Application.Sessions.Queries.GetSession;
 public class GetSessionQueryHandler : IRequestHandler<GetSessionQuery, ErrorOr<Session>>
 {
     private readonly IRoomsRepository _roomsRepository;
-    private readonly ISessionRepository _sessionsRepository;
+    private readonly ISessionsRepository _sessionsRepository;
 
-    public GetSessionQueryHandler(ISessionRepository sessionsRepository, IRoomsRepository roomsRepository)
+    public GetSessionQueryHandler(ISessionsRepository sessionsRepository, IRoomsRepository roomsRepository)
     {
         _sessionsRepository = sessionsRepository;
         _roomsRepository = roomsRepository;

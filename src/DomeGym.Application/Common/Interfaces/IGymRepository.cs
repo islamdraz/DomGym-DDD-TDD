@@ -4,7 +4,7 @@ using DomeGym.Domain.GymAggregate;
 
 namespace DomeGym.Application.Common.Interfaces;
 
-public interface IGymRepository
+public interface IGymsRepository
 {
     Task AddGymAsync(Gym gym);
     Task<Gym?> GetByIdAsync(Guid id);

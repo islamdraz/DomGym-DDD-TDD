@@ -8,9 +8,9 @@ namespace DomeGym.Application.Gyms.Commands;
 
 public class CreateGymCommandHanler : IRequestHandler<CreateGymCommand, ErrorOr<Gym>>
 {
-    private readonly ISubscriptionRepository _subscriptionRepository;
+    private readonly ISubscriptionsRepository _subscriptionRepository;
 
-    public CreateGymCommandHanler(ISubscriptionRepository subscriptionRepository)
+    public CreateGymCommandHanler(ISubscriptionsRepository subscriptionRepository)
     {
         _subscriptionRepository = subscriptionRepository;
     }

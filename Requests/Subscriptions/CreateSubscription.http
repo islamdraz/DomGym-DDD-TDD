@@ -1,0 +1,7 @@
+POST {{host}}/subscriptions
+Content-Type: application/json
+
+{
+    "SubscriptionType": "Starter",
+    "AdminId": "{{adminId}}"
+}

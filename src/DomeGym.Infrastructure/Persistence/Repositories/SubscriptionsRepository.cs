@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DomeGym.Infrastructure.Persistence.Repositories;
 
-public class SubscriptionsRepository : ISubscriptionRepository
+public class SubscriptionsRepository : ISubscriptionsRepository
 {
     private readonly DomeGymDbContext _dbContext;
 

@@ -7,9 +7,9 @@ namespace DomeGym.Application.Subscriptions.Queries.ListSubscriptions;
 
 public class ListSubscriptionsQueryHandler : IRequestHandler<ListSubscriptionsQuery, ErrorOr<List<Subscription>>>
 {
-    private readonly ISubscriptionRepository _subscriptionsRepository;
+    private readonly ISubscriptionsRepository _subscriptionsRepository;
 
-    public ListSubscriptionsQueryHandler(ISubscriptionRepository subscriptionsRepository)
+    public ListSubscriptionsQueryHandler(ISubscriptionsRepository subscriptionsRepository)
     {
         _subscriptionsRepository = subscriptionsRepository;
     }

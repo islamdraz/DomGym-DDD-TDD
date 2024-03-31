@@ -11,10 +11,10 @@ namespace DomeGym.Application.Profiles.Commands.CreateProfile;
 
 public class CreateProfileCommandHandler : IRequestHandler<CreateProfileCommand, ErrorOr<Profile>>
 {
-    private readonly IAdminRepository _adminRepository;
-    private readonly ITrainerRepository _trainerRepository;
-    private readonly IParticipantRepository _participantRepository;
-    public CreateProfileCommandHandler(IAdminRepository adminRepository, IParticipantRepository participantRepository, ITrainerRepository trainerRepository)
+    private readonly IAdminsRepository _adminRepository;
+    private readonly ITrainersRepository _trainerRepository;
+    private readonly IParticipantsRepository _participantRepository;
+    public CreateProfileCommandHandler(IAdminsRepository adminRepository, IParticipantsRepository participantRepository, ITrainersRepository trainerRepository)
     {
         _adminRepository = adminRepository;
         _participantRepository = participantRepository;

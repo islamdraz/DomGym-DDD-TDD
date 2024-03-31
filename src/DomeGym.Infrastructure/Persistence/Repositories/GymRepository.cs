@@ -6,11 +6,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DomeGym.Infrastructure.Persistence.Repositories;
 
-public class GymRepository : IGymRepository
+public class GymsRepository : IGymsRepository
 {
     private readonly DomeGymDbContext _dbcontext;
 
-    public GymRepository(DomeGymDbContext context)
+    public GymsRepository(DomeGymDbContext context)
     {
         _dbcontext = context;
     }

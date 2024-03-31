@@ -9,11 +9,11 @@ namespace DomeGym.Application.Participants.Commands.CancelReservation;
 
 public class CancelReservationCommandHandler : IRequestHandler<CancelReservationCommand, ErrorOr<Deleted>>
 {
-    private readonly ISessionRepository _sessionsRepository;
-    private readonly IParticipantRepository _participantsRepository;
+    private readonly ISessionsRepository _sessionsRepository;
+    private readonly IParticipantsRepository _participantsRepository;
     private readonly IDateTimeProvider _dateTimeProvider;
 
-    public CancelReservationCommandHandler(IParticipantRepository participantsRepository, ISessionRepository sessionsRepository, IDateTimeProvider dateTimeProvider)
+    public CancelReservationCommandHandler(IParticipantsRepository participantsRepository, ISessionsRepository sessionsRepository, IDateTimeProvider dateTimeProvider)
     {
         _participantsRepository = participantsRepository;
         _sessionsRepository = sessionsRepository;

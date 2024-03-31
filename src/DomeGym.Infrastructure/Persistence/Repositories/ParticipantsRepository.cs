@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DomeGym.Infrastructure.Persistence.Repositories;
 
-public class ParticipantsRepository : IParticipantRepository
+public class ParticipantsRepository : IParticipantsRepository
 {
     private readonly DomeGymDbContext _dbContext;
 

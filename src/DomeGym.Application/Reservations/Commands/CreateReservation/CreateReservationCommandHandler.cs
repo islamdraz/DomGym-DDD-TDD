@@ -8,10 +8,10 @@ namespace DomeGym.Application.Reservations.Commands.CreateReservation;
 
 public class CreateReservationCommandHandler : IRequestHandler<CreateReservationCommand, ErrorOr<Success>>
 {
-    private readonly ISessionRepository _sessionsRepository;
-    private readonly IParticipantRepository _participantsRepository;
+    private readonly ISessionsRepository _sessionsRepository;
+    private readonly IParticipantsRepository _participantsRepository;
 
-    public CreateReservationCommandHandler(ISessionRepository sessionsRepository, IParticipantRepository participantsRepository)
+    public CreateReservationCommandHandler(ISessionsRepository sessionsRepository, IParticipantsRepository participantsRepository)
     {
         _sessionsRepository = sessionsRepository;
         _participantsRepository = participantsRepository;

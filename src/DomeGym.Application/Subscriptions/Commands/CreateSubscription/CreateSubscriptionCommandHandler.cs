@@ -9,9 +9,9 @@ namespace DomeGym.Application.Subscriptions.Commands.CreateSubscription;
 
 public class CreateSubscriptionCommandHandler : IRequestHandler<CreateSubscriptionCommand, ErrorOr<Subscription>>
 {
-    private readonly IAdminRepository _adminsRepository;
+    private readonly IAdminsRepository _adminsRepository;
 
-    public CreateSubscriptionCommandHandler(IAdminRepository adminsRepository)
+    public CreateSubscriptionCommandHandler(IAdminsRepository adminsRepository)
     {
         _adminsRepository = adminsRepository;
     }

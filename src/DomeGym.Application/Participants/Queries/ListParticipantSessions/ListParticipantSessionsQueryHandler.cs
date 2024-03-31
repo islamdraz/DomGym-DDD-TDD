@@ -9,10 +9,10 @@ namespace DomeGym.Application.Participants.Queries.ListParticipantSessions;
 
 public class ListParticipantSessionsQueryHandler : IRequestHandler<ListParticipantSessionsQuery, ErrorOr<List<Session>>>
 {
-    private readonly ISessionRepository _sessionsRepository;
-    private readonly IParticipantRepository _participantsRepository;
+    private readonly ISessionsRepository _sessionsRepository;
+    private readonly IParticipantsRepository _participantsRepository;
 
-    public ListParticipantSessionsQueryHandler(ISessionRepository sessionsRepository, IParticipantRepository participantsRepository)
+    public ListParticipantSessionsQueryHandler(ISessionsRepository sessionsRepository, IParticipantsRepository participantsRepository)
     {
         _sessionsRepository = sessionsRepository;
         _participantsRepository = participantsRepository;

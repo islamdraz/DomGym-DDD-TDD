@@ -11,9 +11,9 @@ namespace DomeGym.Application.Sessions.Commands.CreateSession;
 public class CreateSessionCommandHandler : IRequestHandler<CreateSessionCommand, ErrorOr<Session>>
 {
     private readonly IRoomsRepository _roomsRepository;
-    private readonly ITrainerRepository _trainersRepository;
+    private readonly ITrainersRepository _trainersRepository;
 
-    public CreateSessionCommandHandler(ITrainerRepository trainersRepository, IRoomsRepository roomsRepository)
+    public CreateSessionCommandHandler(ITrainersRepository trainersRepository, IRoomsRepository roomsRepository)
     {
         _trainersRepository = trainersRepository;
         _roomsRepository = roomsRepository;

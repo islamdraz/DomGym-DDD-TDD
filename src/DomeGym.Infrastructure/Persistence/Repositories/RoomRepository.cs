@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DomeGym.Infrastructure.Persistance.Repositories;
 
-public class RoomRepository : IRoomsRepository
+public class RoomsRepository : IRoomsRepository
 {
     private readonly DomeGymDbContext _dbContext;
 
-    public RoomRepository(DomeGymDbContext dbContext)
+    public RoomsRepository(DomeGymDbContext dbContext)
     {
         _dbContext = dbContext;
     }

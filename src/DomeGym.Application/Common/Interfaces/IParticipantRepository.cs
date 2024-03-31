@@ -3,7 +3,7 @@ using DomeGym.Domain.ParticipantAggregate;
 
 namespace DomeGym.Application.Common.Interfaces;
 
-public interface IParticipantRepository
+public interface IParticipantsRepository
 {
     Task AddParticipantAsync(Participant participant);
     Task<Profile?> GetProfileByUserIdAsync(Guid userId);

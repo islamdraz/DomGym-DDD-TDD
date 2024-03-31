@@ -7,11 +7,11 @@ namespace DomeGym.Application.Rooms.Commands.CreateRoom;
 
 public class CreateRoomCommandHandler : IRequestHandler<CreateRoomCommand, ErrorOr<Room>>
 {
-    private readonly IGymRepository _gymRepository;
-    private readonly ISubscriptionRepository _subscriptionRepository;
+    private readonly IGymsRepository _gymRepository;
+    private readonly ISubscriptionsRepository _subscriptionRepository;
 
 
-    public CreateRoomCommandHandler(IGymRepository gymRepository, ISubscriptionRepository subscriptionRepository)
+    public CreateRoomCommandHandler(IGymsRepository gymRepository, ISubscriptionsRepository subscriptionRepository)
     {
         _gymRepository = gymRepository;
         _subscriptionRepository = subscriptionRepository;

@@ -29,13 +29,13 @@ public static class DependencyInjection
         services.AddDbContext<DomeGymDbContext>(options =>
             options.UseSqlite("Data Source = DomeGym.db"));
 
-        services.AddScoped<IAdminRepository, AdminRepository>();
-        // services.AddScoped<IGymRepository, GymRepository>();
-        // services.AddScoped<IParticipantsRepository, ParticipantsRepository>();
-        services.AddScoped<IRoomsRepository, RoomRepository>();
-        // services.AddScoped<ISessionsRepository, SessionsRepository>();
-        // services.AddScoped<ISubscriptionsRepository, SubscriptionsRepository>();
-        // services.AddScoped<ITrainersRepository, TrainersRepository>();
+        services.AddScoped<IAdminsRepository, AdminsRepository>();
+        services.AddScoped<IGymsRepository, GymsRepository>();
+        services.AddScoped<IParticipantsRepository, ParticipantsRepository>();
+        services.AddScoped<IRoomsRepository, RoomsRepository>();
+        services.AddScoped<ISessionsRepository, SessionsRepository>();
+        services.AddScoped<ISubscriptionsRepository, SubscriptionsRepository>();
+        services.AddScoped<ITrainersRepository, TrainersRepository>();
         return services;
     }
 

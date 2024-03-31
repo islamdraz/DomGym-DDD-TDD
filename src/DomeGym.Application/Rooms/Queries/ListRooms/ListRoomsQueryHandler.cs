@@ -9,9 +9,9 @@ namespace DomeGym.Application.Rooms.Queries;
 public class ListRoomsQueryHandler : IRequestHandler<ListRoomQuery, ErrorOr<List<Room>>>
 {
     private readonly IRoomsRepository _roomsRepository;
-    private readonly IGymRepository _gymRepository;
+    private readonly IGymsRepository _gymRepository;
 
-    public ListRoomsQueryHandler(IRoomsRepository roomsRepository, IGymRepository gymRepository)
+    public ListRoomsQueryHandler(IRoomsRepository roomsRepository, IGymsRepository gymRepository)
     {
         _roomsRepository = roomsRepository;
         _gymRepository = gymRepository;

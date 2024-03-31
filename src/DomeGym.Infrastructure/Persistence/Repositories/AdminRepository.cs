@@ -8,11 +8,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DomeGym.Infrastructure.Persistence.Repositories;
 
-public class AdminRepository : IAdminRepository
+public class AdminsRepository : IAdminsRepository
 {
     private readonly DomeGymDbContext _dbcontext;
 
-    public AdminRepository(DomeGymDbContext dbcontext)
+    public AdminsRepository(DomeGymDbContext dbcontext)
     {
         _dbcontext = dbcontext;
     }

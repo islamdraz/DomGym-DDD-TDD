@@ -5,7 +5,7 @@ using DomeGym.Domain.TrainerAggregate;
 
 namespace DomeGym.Application.Common.Interfaces;
 
-public interface ITrainerRepository
+public interface ITrainersRepository
 {
     Task AddTrainerAsync(Trainer trainer);
     Task<Profile?> GetProfileByUserIdAsync(Guid userId);

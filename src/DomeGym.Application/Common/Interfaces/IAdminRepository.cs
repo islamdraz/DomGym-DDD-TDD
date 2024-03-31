@@ -4,7 +4,7 @@ using DomeGym.Domain.AdminAggregate;
 
 namespace DomeGym.Application.Common.Interfaces;
 
-public interface IAdminRepository
+public interface IAdminsRepository
 {
     Task AddAdminAsync(Admin participant);
     Task<Profile?> GetProfileByUserIdAsync(Guid userId);

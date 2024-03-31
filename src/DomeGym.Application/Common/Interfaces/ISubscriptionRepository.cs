@@ -2,7 +2,7 @@ using DomeGym.Domain.SubscriptionAggregate;
 
 namespace DomeGym.Application.Common.Interfaces;
 
-public interface ISubscriptionRepository
+public interface ISubscriptionsRepository
 {
     Task AddSubscriptionAsync(Subscription subscription);
     Task<Subscription?> GetByIdAsync(Guid id);

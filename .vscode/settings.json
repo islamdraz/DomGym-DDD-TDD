@@ -1,22 +1,22 @@
-{
-    "workbench.colorCustomizations": {},
-    "editor.tokenColorCustomizations": {
-        "textMateRules": [
-            {
-                "scope": [
-                    "entity.name.function",
-                ],
-                "settings": {
-                    "foreground": "#dfe0a6" // Change this to the desired color
-                }
-            },
-            {
-                "scope": "variable",
-                "settings": {
-                    "foreground": "#a7e5f8",
-                    "fontStyle": ""
-                }
-            }
-        ]
-    }
-}
+// {
+//     "workbench.colorCustomizations": {},
+//     "editor.tokenColorCustomizations": {
+//         "textMateRules": [
+//             {
+//                 "scope": [
+//                     "entity.name.function",
+//                 ],
+//                 "settings": {
+//                     "foreground": "#dfe0a6" // Change this to the desired color
+//                 }
+//             },
+//             {
+//                 "scope": "variable",
+//                 "settings": {
+//                     "foreground": "#a7e5f8",
+//                     "fontStyle": ""
+//                 }
+//             }
+//         ]
+//     }
+// }

@@ -7,11 +7,11 @@ namespace DomeGym.Application.Gyms.Queries.ListSessions;
 
 public class ListSessionsQueryHandler : IRequestHandler<ListSessionsQuery, ErrorOr<List<Session>>>
 {
-    private readonly ISubscriptionRepository _subscriptionRepository;
-    private readonly IGymRepository _gymRepository;
-    private readonly ISessionRepository _sessionRepository;
+    private readonly ISubscriptionsRepository _subscriptionRepository;
+    private readonly IGymsRepository _gymRepository;
+    private readonly ISessionsRepository _sessionRepository;
 
-    public ListSessionsQueryHandler(IGymRepository gymsRepository, ISubscriptionRepository subscriptionsRepository, ISessionRepository sessionsRepository)
+    public ListSessionsQueryHandler(IGymsRepository gymsRepository, ISubscriptionsRepository subscriptionsRepository, ISessionsRepository sessionsRepository)
     {
         _gymRepository = gymsRepository;
         _subscriptionRepository = subscriptionsRepository;

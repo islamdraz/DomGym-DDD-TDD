@@ -2,7 +2,7 @@ using DomeGym.Domain.SessionAggregate;
 
 namespace DomeGym.Application.Common.Interfaces;
 
-public interface ISessionRepository
+public interface ISessionsRepository
 {
     Task AddSessionAsync(Session session);
     Task<Session?> GetByIdAsync(Guid id);

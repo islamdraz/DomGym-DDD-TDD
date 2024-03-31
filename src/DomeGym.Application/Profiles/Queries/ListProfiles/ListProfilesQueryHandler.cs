@@ -7,11 +7,11 @@ namespace DomeGym.Application.Profiles.Queries.ListProfilesQuery;
 
 public class ListProfilesQueryHandler : IRequestHandler<ListProfilesQuery, ErrorOr<List<Profile>>>
 {
-    private readonly ITrainerRepository _trainersRepository;
-    private readonly IParticipantRepository _participantsRepository;
-    private readonly IAdminRepository _adminsRepository;
+    private readonly ITrainersRepository _trainersRepository;
+    private readonly IParticipantsRepository _participantsRepository;
+    private readonly IAdminsRepository _adminsRepository;
 
-    public ListProfilesQueryHandler(ITrainerRepository trainersRepository, IParticipantRepository participantsRepository, IAdminRepository adminsRepository)
+    public ListProfilesQueryHandler(ITrainersRepository trainersRepository, IParticipantsRepository participantsRepository, IAdminsRepository adminsRepository)
     {
         _trainersRepository = trainersRepository;
         _participantsRepository = participantsRepository;

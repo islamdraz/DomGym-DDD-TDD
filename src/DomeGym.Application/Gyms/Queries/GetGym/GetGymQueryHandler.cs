@@ -9,10 +9,10 @@ namespace DomeGym.Application.Gyms.Queries.GetGym;
 public class GetGymQueryHandler : IRequestHandler<GetGymQuery, ErrorOr<Gym>>
 {
 
-    private readonly ISubscriptionRepository _subscriptionRepository;
-    private readonly IGymRepository _gymRepository;
+    private readonly ISubscriptionsRepository _subscriptionRepository;
+    private readonly IGymsRepository _gymRepository;
 
-    public GetGymQueryHandler(ISubscriptionRepository subscriptionRepository, IGymRepository gymRepository)
+    public GetGymQueryHandler(ISubscriptionsRepository subscriptionRepository, IGymsRepository gymRepository)
     {
         _subscriptionRepository = subscriptionRepository;
         _gymRepository = gymRepository;

@@ -8,10 +8,10 @@ namespace DomeGym.Application.Gyms.Commands.AddTrainer;
 public class AddTrainerCommandHandler : IRequestHandler<AddTrainerCommand, ErrorOr<Success>>
 {
 
-    private readonly ISubscriptionRepository _subscriptionsRepository;
-    private readonly IGymRepository _gymRepository;
-    private readonly ITrainerRepository _trainerRepository;
-    public AddTrainerCommandHandler(ISubscriptionRepository subscriptionsRepository, IGymRepository gymRepository, ITrainerRepository trainerRepository)
+    private readonly ISubscriptionsRepository _subscriptionsRepository;
+    private readonly IGymsRepository _gymRepository;
+    private readonly ITrainersRepository _trainerRepository;
+    public AddTrainerCommandHandler(ISubscriptionsRepository subscriptionsRepository, IGymsRepository gymRepository, ITrainersRepository trainerRepository)
     {
         _subscriptionsRepository = subscriptionsRepository;
         _gymRepository = gymRepository;
